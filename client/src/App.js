@@ -15,8 +15,6 @@ import SubscribeContextProvider from './context/SubscribeContext';
 import MyHashtag from './components/tweet/MyHashtag';
 
 
-
-
 const App = () => {
 
   const history = useHistory();
