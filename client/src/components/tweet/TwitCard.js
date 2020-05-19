@@ -11,7 +11,6 @@ export const seekHashtag = (message) => {
     const arrayMessage = message.split(' ');
 
     if (arrayMessage.includes('#myhashtag')) {
-
         let indexOfHashtag = arrayMessage.indexOf("#myhashtag");
         let first = arrayMessage.splice(0, indexOfHashtag);
         let second = arrayMessage.splice(indexOfHashtag + 1)

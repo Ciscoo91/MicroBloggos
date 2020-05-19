@@ -9,6 +9,7 @@ const port = process.env.PORT || 3001;
 // loading routes
 const usersRouter = require('./routes/users');
 const messagesRouter = require('./routes/messages');
+const avatarRouter = require('./routes/avatar');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(function (req, res, next) {
 
 app.use('/users', usersRouter);
 app.use('/messages', messagesRouter);
+app.use('/avatar', avatarRouter);
 
 
 // database connection
@@ -50,7 +52,7 @@ app.use(function (err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.send('error');
 });
 
 

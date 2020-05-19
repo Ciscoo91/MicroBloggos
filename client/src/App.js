@@ -19,7 +19,6 @@ import MyHashtag from './components/tweet/MyHashtag';
 
 const App = () => {
 
-  // const [currentUrl, setCurrentUrl] = useState("");
   const history = useHistory();
 
   useEffect(() => {
@@ -33,12 +32,12 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-    if (history === undefined) {
-      return "no history set";
-    } else {
+
+    return history.listen((location) => {
       localStorage.setItem('currentUrl', history.location.pathname);
-    }
-  }, [history.location.pathname])
+    });
+
+  }, [history])
 
 
 

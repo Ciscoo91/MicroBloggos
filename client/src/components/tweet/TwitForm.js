@@ -3,7 +3,7 @@ import axios from 'axios';
 import TwitCard from './TwitCard';
 
 
-const TwitForm = ({ user }) => {
+const TwitForm = ({ user, token }) => {
 
     // const { user } = useContext(AuthContext)
     const [value, setValue] = useState("")
@@ -14,11 +14,9 @@ const TwitForm = ({ user }) => {
         e.preventDefault();
         let author = user.username;
         let author_id = user.id;
-        // console.log(value.length);
         if (value.length > 140) {
             setError({ error: true, errorMessage: "Your post if too long, it can't contain more than 140 characters" })
         } else {
-            // console.log("n'est pas rentrée dans la condition précédente");
             setError({ error: false, errorMessage: "" })
             axios.post('/messages/message', {
                 message: value,
@@ -26,7 +24,7 @@ const TwitForm = ({ user }) => {
                 author_id: author_id
             }, {
                 headers: {
-                    Authorization: `Bearer ${user.data.token}`
+                    Authorization: `Bearer ${token}`
                 }
             }).then((response) => {
                 if (response.status === 200) {
@@ -41,7 +39,6 @@ const TwitForm = ({ user }) => {
     }
 
     const handleInput = (e) => {
-        console.log("value changed");
         setValue(e.target.value);
     }
 
@@ -52,7 +49,6 @@ const TwitForm = ({ user }) => {
     }
 
     useEffect(() => {
-        console.log("rendered");
         fetchMessages(user.id);
     }, [])
 

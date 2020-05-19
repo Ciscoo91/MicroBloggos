@@ -54,24 +54,24 @@ router.post('/register', function (req, res, next) {
 /** Login to the app */
 router.post("/login", (req, res) => {
 
-    let login = req.body.username;
-    let password = req.body.password;
-
+    const login = req.body.username;
+    const password = req.body.password;
+    console.log(req.body);
     Member.find({
         username: login
     }, (err, user) => {
         if (err) throw err;
-
+        console.log(user);
+        console.log("line 64: ", password, user[0].password)
         let loggedUser = bcrypt.compareSync(password, user[0].password)
         if (loggedUser) {
-            // res.send(user)
+            // res.send(user[0]           
             const username = user[0].username;
             const email = user[0].email;
             const id = user[0]._id;
             const subscribes = user[0].follow;
             jwt.sign({ id, username, email }, secretKey, (err, token) => {
                 if (err) throw err;
-
                 res.send({
                     user: { id, username, email, subscribes },
                     token
@@ -122,7 +122,6 @@ router.get('/subscribes/:id', async (req, res) => {
         const user = await Member.findById(req.params.id, (err, user) => {
             if (err) throw err;
         });
-
         res.send(user.follow);
     }
 });

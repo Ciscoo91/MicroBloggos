@@ -5,15 +5,6 @@ const Message = require('../model/messageSchema');
 const Member = require('../model/memberSchema');
 const verifyToken = require('../middlewares/tokenMiddleware');
 
-// mongoose.connect("mongodb://localhost:27042/test", { useNewUrlParser: true, useUnifiedTopology: true });
-// mongoose.connect("mongodb://Ciscoo91:maravilhaC2!@ds343718.mlab.com:43718/mern-twitter", { useNewUrlParser: true, useUnifiedTopology: true })
-//     .then(
-//     () => {
-//         console.log("Connected..")
-//     }
-// ).catch(err => {
-//     console.log('Caught: ', err.stack)
-// });
 
 router.post("/message", verifyToken, (req, res, next) => {
     let message = req.body.message;
