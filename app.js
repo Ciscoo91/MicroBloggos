@@ -32,7 +32,7 @@ app.use('/avatar', avatarRouter);
 
 
 // database connection
-mongoose.connect(process.env.MONGODB_URI || `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@ds343718.mlab.com:43718/mern-twitter`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+mongoose.connect(process.env.MongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
     .then(() => {
         console.log("Connected..")
     }).catch(err => {
