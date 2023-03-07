@@ -1,0 +1,1485 @@
+{
+  "createdAt": 1678106301568,
+  "packageManager": "npm",
+  "name": "react",
+  "version": "0.0.0",
+  "rootVulnerabilities": [],
+  "dependencyVulnerabilities": [
+    {
+      "findings": {
+        "sources": [
+          {
+            "name": "constantinople",
+            "version": "3.0.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "constantinople",
+            "version": "3.0.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jade>constantinople"
+        ]
+      },
+      "id": 1090850,
+      "name": "constantinople",
+      "title": "Sandbox Bypass Leading to Arbitrary Code Execution in constantinople",
+      "url": "https://github.com/advisories/GHSA-4vmm-mhcq-4x9j",
+      "severity": "critical",
+      "range": "<3.1.1",
+      "recommendation": "Update jade to 0.31.2"
+    },
+    {
+      "findings": {
+        "sources": [
+          {
+            "name": "jsonwebtoken",
+            "version": "8.5.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jsonwebtoken",
+            "version": "8.5.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jsonwebtoken",
+            "version": "8.5.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jsonwebtoken"
+        ]
+      },
+      "id": 1089434,
+      "name": "jsonwebtoken",
+      "title": "jsonwebtoken unrestricted key type could lead to legacy keys usage ",
+      "url": "https://github.com/advisories/GHSA-8cf7-32gw-wr33",
+      "severity": "moderate",
+      "range": "<=8.5.1",
+      "recommendation": "Update jsonwebtoken to 9.0.0"
+    },
+    {
+      "findings": {
+        "sources": [
+          {
+            "name": "jsonwebtoken",
+            "version": "8.5.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jsonwebtoken",
+            "version": "8.5.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jsonwebtoken",
+            "version": "8.5.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jsonwebtoken"
+        ]
+      },
+      "id": 1091087,
+      "name": "jsonwebtoken",
+      "title": "jsonwebtoken's insecure implementation of key retrieval function could lead to Forgeable Public/Private Tokens from RSA to HMAC",
+      "url": "https://github.com/advisories/GHSA-hjrf-2m68-5959",
+      "severity": "moderate",
+      "range": "<=8.5.1",
+      "recommendation": "Update jsonwebtoken to 9.0.0"
+    },
+    {
+      "findings": {
+        "sources": [
+          {
+            "name": "jsonwebtoken",
+            "version": "8.5.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jsonwebtoken",
+            "version": "8.5.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jsonwebtoken",
+            "version": "8.5.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jsonwebtoken"
+        ]
+      },
+      "id": 1091170,
+      "name": "jsonwebtoken",
+      "title": "jsonwebtoken vulnerable to signature validation bypass due to insecure default algorithm in jwt.verify()",
+      "url": "https://github.com/advisories/GHSA-qwph-4952-7xr6",
+      "severity": "moderate",
+      "range": "<9.0.0",
+      "recommendation": "Update jsonwebtoken to 9.0.0"
+    },
+    {
+      "findings": {
+        "sources": [
+          {
+            "name": "mongoose",
+            "version": "5.13.14",
+            "flags": {
+              "prod": true,
+              "peer": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "mongoose",
+            "version": "5.13.14",
+            "flags": {
+              "prod": true,
+              "peer": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "mongoose",
+            "version": "5.13.14",
+            "flags": {
+              "prod": true,
+              "peer": true
+            }
+          }
+        ],
+        "paths": [
+          "mongoose"
+        ]
+      },
+      "id": 1089494,
+      "name": "mongoose",
+      "title": "automattic/mongoose vulnerable to Prototype pollution via Schema.path",
+      "url": "https://github.com/advisories/GHSA-f825-f98c-gj3g",
+      "severity": "high",
+      "range": "<5.13.15"
+    },
+    {
+      "findings": {
+        "sources": [
+          {
+            "name": "qs",
+            "version": "6.5.2",
+            "flags": {
+              "prod": true,
+              "dev": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "express",
+            "version": "4.16.4",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "body-parser",
+            "version": "1.18.3",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "qs",
+            "version": "6.5.2",
+            "flags": {
+              "prod": true,
+              "dev": true
+            }
+          },
+          {
+            "name": "nodemon",
+            "version": "1.3.3",
+            "flags": {
+              "dev": true
+            }
+          },
+          {
+            "name": "update-notifier",
+            "version": "0.1.10",
+            "flags": {
+              "dev": true
+            }
+          },
+          {
+            "name": "request",
+            "version": "2.88.2",
+            "flags": {
+              "dev": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "express",
+            "version": "4.16.4",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "nodemon",
+            "version": "1.3.3",
+            "flags": {
+              "dev": true
+            }
+          }
+        ],
+        "paths": [
+          "express>body-parser>qs",
+          "express>qs",
+          "nodemon>update-notifier>request>qs"
+        ]
+      },
+      "id": 1090135,
+      "name": "qs",
+      "title": "qs vulnerable to Prototype Pollution",
+      "url": "https://github.com/advisories/GHSA-hrpp-h998-j3pp",
+      "severity": "high",
+      "range": ">=6.5.0 <6.5.3",
+      "recommendation": "Update express to 4.18.2"
+    },
+    {
+      "findings": {
+        "sources": [
+          {
+            "name": "uglify-js",
+            "version": "2.2.5",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "transformers",
+            "version": "2.1.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "uglify-js",
+            "version": "2.2.5",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jade>transformers>uglify-js"
+        ]
+      },
+      "id": 1091017,
+      "name": "uglify-js",
+      "title": "Incorrect Handling of Non-Boolean Comparisons During Minification in uglify-js",
+      "url": "https://github.com/advisories/GHSA-34r7-q49f-h37c",
+      "severity": "critical",
+      "range": "<2.4.24",
+      "recommendation": "Update jade to 0.31.2"
+    },
+    {
+      "findings": {
+        "sources": [
+          {
+            "name": "uglify-js",
+            "version": "2.2.5",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "transformers",
+            "version": "2.1.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "uglify-js",
+            "version": "2.2.5",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jade>transformers>uglify-js"
+        ]
+      },
+      "id": 1091018,
+      "name": "uglify-js",
+      "title": "Regular Expression Denial of Service in uglify-js",
+      "url": "https://github.com/advisories/GHSA-c9f4-xj24-8jqx",
+      "severity": "high",
+      "range": "<2.6.0",
+      "recommendation": "Update jade to 0.31.2"
+    }
+  ],
+  "licenseUsage": [
+    {
+      "string": "MIT",
+      "meta": {
+        "type": "Permissive",
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "@types/bson",
+          "version": "4.0.5"
+        },
+        {
+          "name": "@types/mongodb",
+          "version": "3.6.20"
+        },
+        {
+          "name": "@types/node",
+          "version": "18.0.0"
+        },
+        {
+          "name": "accepts",
+          "version": "1.3.7"
+        },
+        {
+          "name": "acorn",
+          "version": "2.7.0"
+        },
+        {
+          "name": "acorn-globals",
+          "version": "1.0.9"
+        },
+        {
+          "name": "agent-base",
+          "version": "6.0.2"
+        },
+        {
+          "name": "debug",
+          "version": "4.3.4"
+        },
+        {
+          "name": "ms",
+          "version": "2.1.2"
+        },
+        {
+          "name": "ansi-regex",
+          "version": "5.0.1"
+        },
+        {
+          "name": "readable-stream",
+          "version": "3.6.0"
+        },
+        {
+          "name": "array-flatten",
+          "version": "1.1.1"
+        },
+        {
+          "name": "balanced-match",
+          "version": "1.0.2"
+        },
+        {
+          "name": "basic-auth",
+          "version": "2.0.1"
+        },
+        {
+          "name": "bcrypt",
+          "version": "5.0.1"
+        },
+        {
+          "name": "bl",
+          "version": "2.2.1"
+        },
+        {
+          "name": "bluebird",
+          "version": "3.5.1"
+        },
+        {
+          "name": "body-parser",
+          "version": "1.18.3"
+        },
+        {
+          "name": "brace-expansion",
+          "version": "1.1.11"
+        },
+        {
+          "name": "busboy",
+          "version": "1.6.0"
+        },
+        {
+          "name": "bytes",
+          "version": "3.0.0"
+        },
+        {
+          "name": "character-parser",
+          "version": "1.2.1"
+        },
+        {
+          "name": "commander",
+          "version": "2.6.0"
+        },
+        {
+          "name": "concat-map",
+          "version": "0.0.1"
+        },
+        {
+          "name": "constantinople",
+          "version": "3.0.2"
+        },
+        {
+          "name": "content-disposition",
+          "version": "0.5.2"
+        },
+        {
+          "name": "content-type",
+          "version": "1.0.4"
+        },
+        {
+          "name": "cookie",
+          "version": "0.3.1"
+        },
+        {
+          "name": "cookie-parser",
+          "version": "1.4.4"
+        },
+        {
+          "name": "cookie-signature",
+          "version": "1.0.6"
+        },
+        {
+          "name": "core-util-is",
+          "version": "1.0.3"
+        },
+        {
+          "name": "css",
+          "version": "1.0.8"
+        },
+        {
+          "name": "css-parse",
+          "version": "1.0.4"
+        },
+        {
+          "name": "css-stringify",
+          "version": "1.0.5"
+        },
+        {
+          "name": "debug",
+          "version": "2.6.9"
+        },
+        {
+          "name": "delegates",
+          "version": "1.0.0"
+        },
+        {
+          "name": "depd",
+          "version": "1.1.2"
+        },
+        {
+          "name": "destroy",
+          "version": "1.0.4"
+        },
+        {
+          "name": "ee-first",
+          "version": "1.1.1"
+        },
+        {
+          "name": "emoji-regex",
+          "version": "8.0.0"
+        },
+        {
+          "name": "encodeurl",
+          "version": "1.0.2"
+        },
+        {
+          "name": "escape-html",
+          "version": "1.0.3"
+        },
+        {
+          "name": "etag",
+          "version": "1.8.1"
+        },
+        {
+          "name": "express",
+          "version": "4.16.4"
+        },
+        {
+          "name": "express-fileupload",
+          "version": "1.4.0"
+        },
+        {
+          "name": "finalhandler",
+          "version": "1.1.1"
+        },
+        {
+          "name": "forwarded",
+          "version": "0.1.2"
+        },
+        {
+          "name": "fresh",
+          "version": "0.5.2"
+        },
+        {
+          "name": "http-errors",
+          "version": "1.6.3"
+        },
+        {
+          "name": "https-proxy-agent",
+          "version": "5.0.1"
+        },
+        {
+          "name": "iconv-lite",
+          "version": "0.4.23"
+        },
+        {
+          "name": "ipaddr.js",
+          "version": "1.9.0"
+        },
+        {
+          "name": "is-fullwidth-code-point",
+          "version": "3.0.0"
+        },
+        {
+          "name": "isarray",
+          "version": "1.0.0"
+        },
+        {
+          "name": "jade",
+          "version": "1.9.2"
+        },
+        {
+          "name": "jsonwebtoken",
+          "version": "8.5.1"
+        },
+        {
+          "name": "jwa",
+          "version": "1.4.1"
+        },
+        {
+          "name": "jws",
+          "version": "3.2.2"
+        },
+        {
+          "name": "lodash.includes",
+          "version": "4.3.0"
+        },
+        {
+          "name": "lodash.isboolean",
+          "version": "3.0.3"
+        },
+        {
+          "name": "lodash.isinteger",
+          "version": "4.0.4"
+        },
+        {
+          "name": "lodash.isnumber",
+          "version": "3.0.3"
+        },
+        {
+          "name": "lodash.isplainobject",
+          "version": "4.0.6"
+        },
+        {
+          "name": "lodash.isstring",
+          "version": "4.0.1"
+        },
+        {
+          "name": "lodash.once",
+          "version": "4.1.1"
+        },
+        {
+          "name": "make-dir",
+          "version": "3.1.0"
+        },
+        {
+          "name": "media-typer",
+          "version": "0.3.0"
+        },
+        {
+          "name": "memory-pager",
+          "version": "1.5.0"
+        },
+        {
+          "name": "merge-descriptors",
+          "version": "1.0.1"
+        },
+        {
+          "name": "methods",
+          "version": "1.1.2"
+        },
+        {
+          "name": "mime",
+          "version": "1.4.1"
+        },
+        {
+          "name": "mime-db",
+          "version": "1.43.0"
+        },
+        {
+          "name": "mime-types",
+          "version": "2.1.26"
+        },
+        {
+          "name": "minimist",
+          "version": "1.2.6"
+        },
+        {
+          "name": "minizlib",
+          "version": "2.1.2"
+        },
+        {
+          "name": "mkdirp",
+          "version": "0.5.6"
+        },
+        {
+          "name": "mongoose",
+          "version": "5.13.14"
+        },
+        {
+          "name": "safe-buffer",
+          "version": "5.2.1"
+        },
+        {
+          "name": "morgan",
+          "version": "1.9.1"
+        },
+        {
+          "name": "mpath",
+          "version": "0.8.4"
+        },
+        {
+          "name": "mquery",
+          "version": "3.2.5"
+        },
+        {
+          "name": "debug",
+          "version": "3.1.0"
+        },
+        {
+          "name": "ms",
+          "version": "2.0.0"
+        },
+        {
+          "name": "negotiator",
+          "version": "0.6.2"
+        },
+        {
+          "name": "node-addon-api",
+          "version": "3.2.1"
+        },
+        {
+          "name": "node-fetch",
+          "version": "2.6.7"
+        },
+        {
+          "name": "object-assign",
+          "version": "4.1.1"
+        },
+        {
+          "name": "on-finished",
+          "version": "2.3.0"
+        },
+        {
+          "name": "on-headers",
+          "version": "1.0.2"
+        },
+        {
+          "name": "parseurl",
+          "version": "1.3.3"
+        },
+        {
+          "name": "path-is-absolute",
+          "version": "1.0.1"
+        },
+        {
+          "name": "path-to-regexp",
+          "version": "0.1.7"
+        },
+        {
+          "name": "process-nextick-args",
+          "version": "2.0.1"
+        },
+        {
+          "name": "proxy-addr",
+          "version": "2.0.5"
+        },
+        {
+          "name": "range-parser",
+          "version": "1.2.1"
+        },
+        {
+          "name": "raw-body",
+          "version": "2.3.3"
+        },
+        {
+          "name": "readable-stream",
+          "version": "2.3.7"
+        },
+        {
+          "name": "regexp-clone",
+          "version": "1.0.0"
+        },
+        {
+          "name": "safe-buffer",
+          "version": "5.1.2"
+        },
+        {
+          "name": "safer-buffer",
+          "version": "2.1.2"
+        },
+        {
+          "name": "saslprep",
+          "version": "1.0.3"
+        },
+        {
+          "name": "send",
+          "version": "0.16.2"
+        },
+        {
+          "name": "serve-static",
+          "version": "1.13.2"
+        },
+        {
+          "name": "sift",
+          "version": "13.5.2"
+        },
+        {
+          "name": "sliced",
+          "version": "1.0.1"
+        },
+        {
+          "name": "sparse-bitfield",
+          "version": "3.0.3"
+        },
+        {
+          "name": "statuses",
+          "version": "1.4.0"
+        },
+        {
+          "name": "streamsearch",
+          "version": "1.1.0"
+        },
+        {
+          "name": "string_decoder",
+          "version": "1.1.1"
+        },
+        {
+          "name": "string-width",
+          "version": "4.2.3"
+        },
+        {
+          "name": "strip-ansi",
+          "version": "6.0.1"
+        },
+        {
+          "name": "mkdirp",
+          "version": "1.0.4"
+        },
+        {
+          "name": "tr46",
+          "version": "0.0.3"
+        },
+        {
+          "name": "transformers",
+          "version": "2.1.0"
+        },
+        {
+          "name": "is-promise",
+          "version": "1.0.1"
+        },
+        {
+          "name": "promise",
+          "version": "2.0.0"
+        },
+        {
+          "name": "type-is",
+          "version": "1.6.18"
+        },
+        {
+          "name": "unpipe",
+          "version": "1.0.0"
+        },
+        {
+          "name": "util-deprecate",
+          "version": "1.0.2"
+        },
+        {
+          "name": "utils-merge",
+          "version": "1.0.1"
+        },
+        {
+          "name": "vary",
+          "version": "1.1.2"
+        },
+        {
+          "name": "void-elements",
+          "version": "2.0.1"
+        },
+        {
+          "name": "whatwg-url",
+          "version": "5.0.0"
+        },
+        {
+          "name": "with",
+          "version": "4.0.3"
+        },
+        {
+          "name": "acorn",
+          "version": "1.2.2"
+        },
+        {
+          "name": "wordwrap",
+          "version": "0.0.3"
+        }
+      ]
+    },
+    {
+      "string": "ISC",
+      "meta": {
+        "type": "Permissive",
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "lru-cache",
+          "version": "6.0.0"
+        },
+        {
+          "name": "semver",
+          "version": "7.3.7"
+        },
+        {
+          "name": "abbrev",
+          "version": "1.1.1"
+        },
+        {
+          "name": "aproba",
+          "version": "2.0.0"
+        },
+        {
+          "name": "are-we-there-yet",
+          "version": "2.0.0"
+        },
+        {
+          "name": "chownr",
+          "version": "2.0.0"
+        },
+        {
+          "name": "color-support",
+          "version": "1.1.3"
+        },
+        {
+          "name": "console-control-strings",
+          "version": "1.1.0"
+        },
+        {
+          "name": "fs-minipass",
+          "version": "2.1.0"
+        },
+        {
+          "name": "fs.realpath",
+          "version": "1.0.0"
+        },
+        {
+          "name": "gauge",
+          "version": "3.0.2"
+        },
+        {
+          "name": "glob",
+          "version": "7.2.3"
+        },
+        {
+          "name": "minimatch",
+          "version": "3.1.2"
+        },
+        {
+          "name": "has-unicode",
+          "version": "2.0.1"
+        },
+        {
+          "name": "inflight",
+          "version": "1.0.6"
+        },
+        {
+          "name": "inherits",
+          "version": "2.0.3"
+        },
+        {
+          "name": "semver",
+          "version": "6.3.0"
+        },
+        {
+          "name": "minipass",
+          "version": "3.3.3"
+        },
+        {
+          "name": "nopt",
+          "version": "5.0.0"
+        },
+        {
+          "name": "npmlog",
+          "version": "5.0.1"
+        },
+        {
+          "name": "once",
+          "version": "1.4.0"
+        },
+        {
+          "name": "rimraf",
+          "version": "3.0.2"
+        },
+        {
+          "name": "semver",
+          "version": "5.7.1"
+        },
+        {
+          "name": "set-blocking",
+          "version": "2.0.0"
+        },
+        {
+          "name": "setprototypeof",
+          "version": "1.1.0"
+        },
+        {
+          "name": "signal-exit",
+          "version": "3.0.7"
+        },
+        {
+          "name": "tar",
+          "version": "6.1.11"
+        },
+        {
+          "name": "wide-align",
+          "version": "1.1.5"
+        },
+        {
+          "name": "wrappy",
+          "version": "1.0.2"
+        },
+        {
+          "name": "yallist",
+          "version": "4.0.0"
+        }
+      ]
+    },
+    {
+      "string": "Apache-2.0",
+      "meta": {
+        "type": "Permissive",
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "bson",
+          "version": "1.1.6"
+        },
+        {
+          "name": "denque",
+          "version": "1.5.1"
+        },
+        {
+          "name": "detect-libc",
+          "version": "2.0.1"
+        },
+        {
+          "name": "ecdsa-sig-formatter",
+          "version": "1.0.11"
+        },
+        {
+          "name": "kareem",
+          "version": "2.3.2"
+        },
+        {
+          "name": "mongodb",
+          "version": "3.7.3"
+        },
+        {
+          "name": "optional-require",
+          "version": "1.1.8"
+        },
+        {
+          "name": "mongoose-legacy-pluralize",
+          "version": "1.0.2"
+        },
+        {
+          "name": "optional-require",
+          "version": "1.0.3"
+        },
+        {
+          "name": "require-at",
+          "version": "1.0.6"
+        }
+      ]
+    },
+    {
+      "string": "BSD-3-Clause",
+      "meta": {
+        "type": "Permissive",
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "@mapbox/node-pre-gyp",
+          "version": "1.0.9"
+        },
+        {
+          "name": "buffer-equal-constant-time",
+          "version": "1.0.1"
+        },
+        {
+          "name": "qs",
+          "version": "6.5.2"
+        },
+        {
+          "name": "source-map",
+          "version": "0.1.43"
+        }
+      ]
+    },
+    {
+      "string": "BSD-2-Clause",
+      "meta": {
+        "type": "Permissive",
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "dotenv",
+          "version": "8.2.0"
+        },
+        {
+          "name": "uglify-js",
+          "version": "2.2.5"
+        },
+        {
+          "name": "webidl-conversions",
+          "version": "3.0.1"
+        }
+      ]
+    },
+    {
+      "string": "BSD-3-Clause OR MIT",
+      "meta": {
+        "type": "Permissive",
+        "isSpdxExpression": true
+      },
+      "dependencies": [
+        {
+          "name": "amdefine",
+          "version": "1.0.1"
+        }
+      ]
+    },
+    {
+      "string": "MIT/X11",
+      "meta": {
+        "type": "Invalid",
+        "isSpdxExpression": false
+      },
+      "dependencies": [
+        {
+          "name": "optimist",
+          "version": "0.3.7"
+        }
+      ]
+    }
+  ],
+  "licenseIssues": [
+    {
+      "severity": "low",
+      "title": "Package uses a license that is not OSI approved (\"MIT/X11\")",
+      "shortTitle": "License not OSI approved",
+      "name": "optimist",
+      "version": "0.3.7",
+      "recommendation": "Read and validate the license terms",
+      "findings": {
+        "sources": [
+          {
+            "name": "optimist",
+            "version": "0.3.7",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "transformers",
+            "version": "2.1.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "uglify-js",
+            "version": "2.2.5",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "optimist",
+            "version": "0.3.7",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jade>transformers>uglify-js>optimist"
+        ]
+      },
+      "type": "license"
+    },
+    {
+      "severity": "high",
+      "title": "Package uses an invalid SPDX license (\"MIT/X11\")",
+      "shortTitle": "Invalid SPDX license",
+      "name": "optimist",
+      "version": "0.3.7",
+      "recommendation": "Validate that the package complies with your license policy",
+      "findings": {
+        "sources": [
+          {
+            "name": "optimist",
+            "version": "0.3.7",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "transformers",
+            "version": "2.1.0",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "uglify-js",
+            "version": "2.2.5",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "optimist",
+            "version": "0.3.7",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jade>transformers>uglify-js>optimist"
+        ]
+      },
+      "type": "license"
+    }
+  ],
+  "metaIssues": [
+    {
+      "severity": "high",
+      "title": "Package uses install script: \"node-pre-gyp install --fallback-to-build\"",
+      "shortTitle": "Uses install script",
+      "name": "bcrypt",
+      "version": "5.0.1",
+      "findings": {
+        "sources": [
+          {
+            "name": "bcrypt",
+            "version": "5.0.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "bcrypt",
+            "version": "5.0.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "bcrypt",
+            "version": "5.0.1",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "bcrypt"
+        ]
+      },
+      "type": "meta"
+    },
+    {
+      "severity": "high",
+      "title": "Deprecated package",
+      "name": "constantinople",
+      "version": "3.0.2",
+      "findings": {
+        "sources": [
+          {
+            "name": "constantinople",
+            "version": "3.0.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "constantinople",
+            "version": "3.0.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jade>constantinople"
+        ]
+      },
+      "type": "meta"
+    },
+    {
+      "severity": "high",
+      "title": "Deprecated package",
+      "name": "jade",
+      "version": "1.9.2",
+      "findings": {
+        "sources": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jade"
+        ]
+      },
+      "type": "meta"
+    },
+    {
+      "severity": "high",
+      "title": "Deprecated package",
+      "name": "transformers",
+      "version": "2.1.0",
+      "findings": {
+        "sources": [
+          {
+            "name": "transformers",
+            "version": "2.1.0",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "affects": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          },
+          {
+            "name": "transformers",
+            "version": "2.1.0",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "rootDependencies": [
+          {
+            "name": "jade",
+            "version": "1.9.2",
+            "flags": {
+              "prod": true
+            }
+          }
+        ],
+        "paths": [
+          "jade>transformers"
+        ]
+      },
+      "type": "meta"
+    }
+  ],
+  "errors": []
+}

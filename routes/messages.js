@@ -1,25 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require("mongoose");
 const Message = require('../model/messagesSchema');
 const Member = require('../model/memberSchema');
 const verifyToken = require('../middlewares/tokenMiddleware');
 
-// mongoose.connect("mongodb://localhost:27042/test", { useNewUrlParser: true, useUnifiedTopology: true });
-// mongoose.connect("mongodb://Ciscoo91:maravilhaC2!@ds343718.mlab.com:43718/mern-twitter", { useNewUrlParser: true, useUnifiedTopology: true })
-//     .then(
-//     () => {
-//         console.log("Connected..")
-//     }
-// ).catch(err => {
-//     console.log('Caught: ', err.stack)
-// });
 
 router.post("/message", verifyToken, (req, res, next) => {
     let message = req.body.message;
     let author = req.body.author;
     let author_id = req.body.author_id;
-    // console.log(req.body, req.body.message.length)
 
     let messageToSave = new Message({
         message: message,
@@ -45,7 +34,6 @@ router.get("/messages", (req, res, next) => {
 router.get('/messages/:id', (req, res) => {
     Message.find({ author_id: req.params.id }).sort({ created_at: 'desc' }).exec((err, messages) => {
         if (err) throw err;
-        // console.log(messages);
         res.json(messages);
     });
 });

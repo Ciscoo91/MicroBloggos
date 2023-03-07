@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
@@ -13,24 +12,18 @@ const avatarRouter = require('./routes/avatar');
 
 const app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.use(fileUpload({
-  createParentPath: true
-}));
+app.use(express.static(path.join(__dirname, "client", "build")));
 
-mongoose.connect("mongodb://localhost:27042/test", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+mongoose.connect(`mongodb+srv://${process.env.DB_ADMIN}:${process.env.DB_PASSWORD}@microbloggos.p22fo.mongodb.net/microbloggos?retryWrites=true&w=majority` || `mongodb://localhost:27042/test`)
   .then(() => {
-    console.log("Connected..")
-  }).catch(err => {
-    console.log('Caught: ', err.stack)
+    console.log("Connection successful")
+  }).catch(e => {
+    console.log(e)
   });
 
 // cors handler
@@ -58,12 +51,23 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  console.log(err);
+  res.json({ "error": err.message });
 });
 
 // Redirect all the routes to client/build/index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build/index.html'));
-})
+if (process.env.NODE_ENV === "production") {
+
+  app.use(express.static(path.join(__dirname, "client", "build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+  });
+
+  app.listen(process.env.PORT, () => {
+    console.log("Runnig in production server");
+  })
+
+}
+
 
 module.exports = app;

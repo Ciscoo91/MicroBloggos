@@ -26,12 +26,6 @@ const AuthContextProvider = (props) => {
         }
     }, []);
 
-    // useEffect(() => {
-    //     window.localStorage.setItem('authData', JSON.stringify(user.data));
-    // }, [user.data])
-
-    // const providerValue = useMemo(() => ({ user, logOut, logIn }), [user, setUser])
-
     return (
         <AuthContext.Provider value={{ logOut, logIn, user }}>
             {props.children}

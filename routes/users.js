@@ -1,12 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const router = express.Router();
-const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const Member = require("../model/memberSchema");
 const jwt = require("jsonwebtoken");
 const secretKey = process.env.SECRET_KEY;
-const verifyToken = require('../middlewares/tokenMiddleware');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -44,7 +42,6 @@ router.post('/register', function (req, res, next) {
     });
     user.save((err, data) => {
       if (err) throw err;
-      // console.log('User registered successfully')
       res.send(data)
     })
   }
@@ -54,21 +51,22 @@ router.post('/register', function (req, res, next) {
 /** Login to the app */
 router.post("/login", (req, res) => {
 
-  let login = req.body.username;
+  let username = req.body.username;
   let password = req.body.password;
 
-  Member.find({
-    username: login
+  console.log(req.body);
+
+  Member.findOne({
+    username
   }, (err, user) => {
     if (err) throw err;
 
-    let loggedUser = bcrypt.compareSync(password, user[0].password)
+    let loggedUser = bcrypt.compareSync(password, user.password)
     if (loggedUser) {
-      // res.send(user)
-      const username = user[0].username;
-      const email = user[0].email;
-      const id = user[0]._id;
-      const subscribes = user[0].follow;
+      
+      const email = user.email;
+      const id = user._id;
+      const subscribes = user.follow;
       jwt.sign({ id, username, email }, secretKey, (err, token) => {
         if (err) throw err;
 
@@ -84,7 +82,6 @@ router.post("/login", (req, res) => {
 /** UPDATE user */
 router.put('/update/:id', (req, res) => {
 
-  // console.log(req.body);
   const username = req.body.username;
   const password = req.body.password;
   const password_confirm = req.body.password_confirm;
@@ -116,16 +113,19 @@ router.put('/upload', (req, res) => {
 /** GET subscribes */
 router.get('/subscribes/:id', async (req, res) => {
   let result = [];
-  const user = await Member.findById(req.params.id, (err, user) => {
-    if (err) throw err;
-  });
+  if (req.params.id == "null") {
+    res.send("no user for null value");
+  } else {
+    const user = await Member.findById(req.params.id, (err, user) => {
+      if (err) throw err;
+    });
 
-  res.send(user.follow);
+    res.send(user.follow);
+  }
 });
 
 
 router.put('/subscribe', (req, res) => {
-  // console.log(req.body);
   Member.findByIdAndUpdate(req.body.id, { follow: req.body.subscribes }, { new: true }, (err, user) => {
     if (err) throw err;
     res.json(user)
