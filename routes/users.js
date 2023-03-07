@@ -1,12 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const router = express.Router();
-const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const Member = require("../model/memberSchema");
 const jwt = require("jsonwebtoken");
 const secretKey = process.env.SECRET_KEY;
-const verifyToken = require('../middlewares/tokenMiddleware');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -44,7 +42,6 @@ router.post('/register', function (req, res, next) {
     });
     user.save((err, data) => {
       if (err) throw err;
-      // console.log('User registered successfully')
       res.send(data)
     })
   }
@@ -64,10 +61,9 @@ router.post("/login", (req, res) => {
   }, (err, user) => {
     if (err) throw err;
 
-    // console.log("user: ", user, "password:", password)
     let loggedUser = bcrypt.compareSync(password, user.password)
     if (loggedUser) {
-      // res.send(user     const username = user.username;
+      
       const email = user.email;
       const id = user._id;
       const subscribes = user.follow;
@@ -86,7 +82,6 @@ router.post("/login", (req, res) => {
 /** UPDATE user */
 router.put('/update/:id', (req, res) => {
 
-  // console.log(req.body);
   const username = req.body.username;
   const password = req.body.password;
   const password_confirm = req.body.password_confirm;
@@ -131,7 +126,6 @@ router.get('/subscribes/:id', async (req, res) => {
 
 
 router.put('/subscribe', (req, res) => {
-  // console.log(req.body);
   Member.findByIdAndUpdate(req.body.id, { follow: req.body.subscribes }, { new: true }, (err, user) => {
     if (err) throw err;
     res.json(user)
