@@ -12,9 +12,6 @@ const avatarRouter = require('./routes/avatar');
 
 const app = express();
 
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -22,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "client", "build")));
 
-mongoose.connect(`mongodb+srv://${process.env.DB_ADMIN}:${process.env.DB_PASSWORD}@microbloggos.p22fo.mongodb.net/microbloggos?retryWrites=true&w=majority` || `mongodb://localhost:27042/test`, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+mongoose.connect(`mongodb+srv://${process.env.DB_ADMIN}:${process.env.DB_PASSWORD}@microbloggos.p22fo.mongodb.net/microbloggos?retryWrites=true&w=majority` || `mongodb://localhost:27042/test`)
   .then(() => {
     console.log("Connection successful")
   }).catch(e => {

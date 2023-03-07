@@ -5,18 +5,24 @@
 Microbloggo is a school project, it's an app where a user can register then post small messages, edit is profile, subscribe to other users posts.
 
 ---
+
 ### Technologies used
+
 API is built with:
-* Express.js 
-* MongoDB 
 
+- Express.js
+- MongoDB
 
-The UI is built with: 
-* React.js
-* Bootstrap.
+The UI is built with:
+
+- React.js
+- Bootstrap.
 
 Other
-* Firebase (to store files used as profile picture by the users).
-* heroku (for deployment --> replacing it with fly.io soon)
-___
+
+- Firebase (to store files used as profile picture by the users).
+- heroku (for deployment --> replacing it with fly.io soon)
+
+---
+
 [Link to the app](https://mern-micro-twitter.herokuapp.com/)
