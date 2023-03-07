@@ -17,6 +17,6 @@ The UI is built with:
 
 Other
 * Firebase (to store files used as profile picture by the users).
-* heroku (for deployment)
+* heroku (for deployment --> replacing it with fly.io soon)
 ___
 [Link to the app](https://mern-micro-twitter.herokuapp.com/)
