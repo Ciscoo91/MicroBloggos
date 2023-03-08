@@ -14,7 +14,6 @@ const Avatar = ({ id }) => {
     const handleChange = (e) => {
 
         const file = e.target.files[0];
-        // console.log(file);
         if (file) {
             const fileType = file.type;
             const validTypes = ["image/jpg", "image/jpeg", "image/png", "image/gif"]
@@ -33,8 +32,8 @@ const Avatar = ({ id }) => {
             id: id,
             image_url: imageUrl,
         });
-        // const JsonResponse = await response.json();
-        // console.log(response, typeof response);
+
+        const data = await response.json()
     }
 
     const handleUpload = (e) => {
@@ -49,15 +48,13 @@ const Avatar = ({ id }) => {
 
                 setProgress(progress);
             }, error => {
-                // setError(error);
-                console.log(error);
+                setError(error.message);
             }, () => {
                 storage
                     .ref("images")
                     .child(image.name)
                     .getDownloadURL()
                     .then(url => {
-                        // console.log(url)
                         setImageUrl(url);
                         setProgress(0);
                     })

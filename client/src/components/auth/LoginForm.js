@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigation } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../../context/AuthContext';
 
@@ -10,7 +10,7 @@ const LoginForm = () => {
     const { logIn } = useContext(AuthContext);
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
-    let history = useHistory();
+    let navigation = useNavigation();
 
 
     const handleSubmit = (e) => {
@@ -25,7 +25,7 @@ const LoginForm = () => {
                 console.log(authData);
                 logIn(authData);
                 window.localStorage.setItem('authData', JSON.stringify(authData));
-                history.push('/feed');
+                navigation.push('/feed');
             }
         }).catch((error) => {
             console.log(error);

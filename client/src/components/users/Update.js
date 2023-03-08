@@ -19,7 +19,6 @@ const UpdateUser = ({ id }) => {
 
         const jsonResponse = await response.json();
 
-        // console.log(jsonResponse);
     }
 
     return (

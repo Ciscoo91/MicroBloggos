@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useHistory } from 'react-router-dom'
+import { useNavigation } from 'react-router-dom'
 
 
 
@@ -10,7 +10,7 @@ const RegisgertUser = () => {
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [passwordConfirm, setPasswordConfirm] = useState(null);
-    const history = useHistory();
+    const navigation = useNavigation();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,7 +20,7 @@ const RegisgertUser = () => {
             password_confirm: passwordConfirm,
             email: email,
         }).then((response) => {
-            history.push('/login')
+            navigation.push('/login')
         }).catch((error) => {
             console.log(error);
         });
