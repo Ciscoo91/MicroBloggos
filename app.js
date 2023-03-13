@@ -64,10 +64,13 @@ if (process.env.NODE_ENV === "production") {
   });
 
   app.listen(process.env.PORT, () => {
-    console.log("Runnig in production server");
+    console.log("Running in production server");
   })
 
 }
 
+app.listen(process.env.PORT, () => {
+  console.log("Running in development mode");
+})
 
 module.exports = app;
