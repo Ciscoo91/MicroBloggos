@@ -3,15 +3,18 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const messagesRouter = require('./routes/messages');
 const avatarRouter = require('./routes/avatar');
+const {connectDB, sequelize} = require('./config/database')
+const creatSync = require('./model/associations')
 
 const app = express();
 
+connectDB()
+creatSync(sequelize)
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -19,16 +22,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "client", "build")));
 
-mongoose.connect(`mongodb+srv://${process.env.DB_ADMIN}:${process.env.DB_PASSWORD}@microbloggos.p22fo.mongodb.net/microbloggos-test?retryWrites=true&w=majority` || `mongodb://localhost:27042/test`)
-  .then(() => {
-    console.log("Connection successful")
-  }).catch(e => {
-    console.log(e)
-  });
 
-// cors handler
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
