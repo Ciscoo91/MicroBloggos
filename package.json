@@ -8,11 +8,11 @@
   },
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon ./bin/www",
+    "dev": "NODE_ENV=developpment node --watch app.js",
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
-    "test": "vitest --test-timeout=8000"
+    "test": "export NODE_ENV=test vitest --test-timeout=8000"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -24,7 +24,10 @@
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.29.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.21",

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Message = require('../model/messagesSchema');
-const Member = require('../model/memberSchema');
+const {Messages} = require('../model/messagesModel');
+const {User} = require('../model/userModel');
 const verifyToken = require('../middlewares/tokenMiddleware');
 
 
