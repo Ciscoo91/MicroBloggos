@@ -1,4 +1,5 @@
-import firebase from 'firebase';
+import {initializeApp} from 'firebase/app';
+import {getFirestore} from "firebase/firestore/lite"
 
 const config = {
     apiKey: "AIzaSyByH4qKb4ZjdevEbd87OKKCxtF3D2vrdU4",
@@ -11,11 +12,11 @@ const config = {
     measurementId: "G-9DP6JZ1ZKG"
 }
 
-firebase.initializeApp(config);
+const app = initializeApp(config);
 
-const storage = firebase.storage();
+const storage = getFirestore(app);
 
 export {
     storage,
-    firebase as default
+    app
 }

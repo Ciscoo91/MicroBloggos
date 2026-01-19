@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
 
 
 /** GET user by Id */
-router.get('/profile/:id', (req, res) => {
+router.get('/users/:id', (req, res) => {
     id = req.params.id;
     Member.findById(id, (err, user) => {
         if (err) throw err;
@@ -26,63 +26,9 @@ router.get('/profile/:id', (req, res) => {
 });
 
 
-/** Register a new user */
-router.post('/register', function (req, res, next) {
-
-    let username = req.body.username;
-    let password = req.body.password;
-    let password_confirm = req.body.password_confirm;
-    let email = req.body.email;
-
-    if (password === password_confirm) {
-        const saltRounds = 10;
-        let hash = bcrypt.hashSync(password, saltRounds);
-        let user = new Member({
-            username: username,
-            password: hash,
-            email: email
-        });
-        user.save((err, data) => {
-            if (err) throw err;
-            // console.log('User registered successfully')
-            res.send(data)
-        })
-    }
-
-});
-
-/** Login to the app */
-router.post("/login", (req, res) => {
-
-    const login = req.body.username;
-    const password = req.body.password;
-    console.log(req.body);
-    Member.findOne({
-        username: login
-    }, (err, user) => {
-        if (err) throw err;
-        console.log(user);
-        console.log("line 64: ", password, user.password)
-        let loggedUser = bcrypt.compareSync(password, user.password)
-        if (loggedUser) {
-            // res.send(user           
-            const username = user.username;
-            const email = user.email;
-            const id = user._id;
-            const subscribes = user.follow;
-            jwt.sign({ id, username, email }, secretKey, (err, token) => {
-                if (err) throw err;
-                res.send({
-                    user: { id, username, email, subscribes },
-                    token
-                });
-            });
-        }
-    })
-});
 
 /** UPDATE user */
-router.put('/update/:id', (req, res) => {
+router.put('/users/:id', (req, res) => {
 
     // console.log(req.body);
     const username = req.body.username;
@@ -103,7 +49,7 @@ router.put('/update/:id', (req, res) => {
 });
 
 /** UPDATE avatar */
-router.put('/upload', (req, res) => {
+router.put('/users/:id/avatar', (req, res) => {
     console.log("image to upload req: ", req.body);
     const avatar_url = req.body.image_url;
     const id = req.body.id;
@@ -114,7 +60,7 @@ router.put('/upload', (req, res) => {
 });
 
 /** GET subscribes */
-router.get('/subscribes/:id', async (req, res) => {
+router.get('/users/:id/subscriptions', async (req, res) => {
     let result = [];
     if (req.params.id == "null") {
         res.send("no user for null value");
@@ -127,12 +73,11 @@ router.get('/subscribes/:id', async (req, res) => {
 });
 
 
-router.put('/subscribe', (req, res) => {
-    // console.log(req.body);
+router.put('/users/:id/subscribe', (req, res) => {
+    
     Member.findByIdAndUpdate(req.body.id, { follow: req.body.subscribes }, { new: true }, (err, user) => {
         if (err) throw err;
-        res.json(user)
-            ;
+        res.json(user);
     })
 })
 

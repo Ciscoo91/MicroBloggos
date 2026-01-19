@@ -10,6 +10,7 @@ const port = process.env.PORT || 3001;
 const usersRouter = require('./routes/users');
 const messagesRouter = require('./routes/messages');
 const avatarRouter = require('./routes/avatar');
+const authRouter = require("./routes/auth")
 
 const app = express();
 
@@ -26,9 +27,11 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/messages', messagesRouter);
 app.use('/avatar', avatarRouter);
+
 
 
 // database connection
@@ -37,7 +40,8 @@ mongoose.connect(process.env.MongoURI, { useNewUrlParser: true, useUnifiedTopolo
         console.log("Connected..")
     }).catch(err => {
         console.log('Caught: ', err.stack)
-    });
+    }
+);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
