@@ -1,5 +1,4 @@
 const express = require("express");
-const createErrors = require('http-errors');
 const logger = require('morgan');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -35,7 +34,7 @@ app.use('/avatar', avatarRouter);
 
 
 // database connection
-mongoose.connect(process.env.MongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+mongoose.connect(process.env.MongoURI)
     .then(() => {
         console.log("Connected..")
     }).catch(err => {

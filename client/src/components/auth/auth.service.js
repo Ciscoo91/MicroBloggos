@@ -10,7 +10,7 @@ class AuthService {
         });
     }
 
-    logout = () => {
+    static logout = () => {
         window.localStorage.removeItem("currentUrl");
         window.localStorage.removeItem("authData");
     }
